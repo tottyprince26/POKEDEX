@@ -1,0 +1,99 @@
+
+<div class="card-container" *ngIf="pokemonSpecies" >
+  <div>
+    <button style="margin-left: 20px; margin-top: 10px; background-color: #884299" mat-raised-button color="primary" (click)="goBack()">Back</button>
+  </div>
+      <mat-card class="card">
+        <mat-card-content class="card-content"  [ngStyle]="{'background-color': pokemonColor}" >
+
+          <div>
+            <mat-card-header class="card-header">
+              <mat-card-title class="tittle"><h2>{{pokemonName}}</h2></mat-card-title>
+              <mat-card-subtitle class="subtittle">Nº {{pokemonId}}</mat-card-subtitle>
+              <mat-card-subtitle><span *ngFor="let type of pokemontypes" style="color:white;"> {{type}}</span> </mat-card-subtitle>
+            </mat-card-header>
+          </div>
+
+          <img class="imgpokemon" mat-card-image src="{{pokemonImg}}" alt="pokemon">
+         
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card-stats">
+        <mat-tab-group class="pestaña" >
+          <mat-tab label="About" class="about">
+            <mat-list role="list" class="list" >
+
+              <mat-list-item >
+                <p><strong> Genero: </strong>{{pokemonSpecies.gender_rate /8*100  }} <strong style="color: palevioletred; font-size: 18px;">♀</strong>
+              {{(8 - pokemonSpecies.gender_rate)/8*100 }} <strong style="color: blue;">♂</strong></p>
+              </mat-list-item>
+
+              <mat-list-item>
+                <p><strong> Height:</strong>{{pokemonHeight / 100}}m </p>
+              </mat-list-item>
+
+              <mat-list-item>
+                <p><strong> Weight:</strong> {{ pokemonWeight / 10}}kg</p>
+              </mat-list-item>
+
+              <mat-list-item >
+                <p><strong>Growth Rate:</strong> {{pokemonGrowthRate}}</p>
+              </mat-list-item>
+
+              <mat-list-item>
+                <p><strong> Egg Groups:</strong><span *ngFor="let eggGropus of pokemonEggGroup"> {{eggGropus}}</span></p>
+              </mat-list-item>
+              <!--<mat-list-item><p>Abilities:</p></mat-list-item>-->
+            </mat-list>
+          </mat-tab>
+
+          <mat-tab label="Base Stats">
+            <mat-list role="list" class="list">
+
+              <mat-list-item *ngFor="let stat of pokemonStats">
+                <p><span> {{stat.statname }}:</span> {{stat.base_stat}}
+                  <mat-progress-bar  mode="determinate" value={{stat.base_stat}} ></mat-progress-bar>
+                </p>
+              </mat-list-item>      
+
+            </mat-list>
+          </mat-tab>
+
+          <mat-tab label="information" >
+            <mat-list role="list" class="list" >
+
+              <mat-list-item>
+                <p> <strong> Habitat: </strong> {{pokemonHabitat}}</p>
+              </mat-list-item>
+
+              <mat-list-item>
+                <p ><strong> Generación: </strong>{{pokemonGeneration}}</p>                
+              </mat-list-item>
+
+              <mat-list-item>
+              </mat-list-item>
+              
+            </mat-list>
+          </mat-tab>
+          
+          <mat-tab label="Evolutions and skills">
+            <mat-list>
+              <mat-list-item>
+                <p><strong> Abilities:</strong>{{pokemonAbilities}} </p>
+              </mat-list-item>
+
+              <mat-list-item style="height: 100px;">
+                <p><strong> Evolutions:</strong> </p>
+                <p> {{pokemonEvolutionChain1 }} {{pokemonEvolutionChain2}} {{pokemonEvolutionChain3}}</p> 
+                <p> </p>
+                <p>  </p>
+              </mat-list-item>
+
+            </mat-list>
+          </mat-tab>
+
+        </mat-tab-group>
+      </mat-card>
+
+</div>

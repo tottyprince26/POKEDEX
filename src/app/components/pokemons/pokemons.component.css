@@ -1,0 +1,133 @@
+@import url("https://fonts.cdnfonts.com/css/pokemon-solid");
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  row-gap: 10px;
+  justify-content: center;
+  margin-top: 100px;
+  bottom: 0;
+  position: fixed;
+}
+
+button {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  color: #f5f5f5;
+  background-color: #884299;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+.card-content {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 185px;
+  background-color: #884299;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.cont {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr); 
+  border: #55396b solid 2px;
+  border-radius: 2%;
+  width: 90%;
+  height: 100vh;
+  background-color: #ffffff;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.div-cards {
+  width: 25%;
+  margin-top: 30px;
+  align-items: center;
+  gap: 10px;
+}
+
+input {
+  border: #884299 solid 10px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  font-size: 15px;
+}
+
+.form {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  align-content: center;
+}
+
+html {
+  height: 100%;
+}
+
+h1 {
+  color: #ffffff;
+  margin: 5px;
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3 {
+  margin-bottom: 0;
+  color: #ffffff;
+}
+
+img {
+  margin-top: 10px;
+  width: 150px;
+  height: 140px;
+}
+
+input {
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #2f2f30;
+}
+
+.pokecard {
+  width: 80%;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.searchTerm{
+  border: #884299 solid 2px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  width: 25%;
+  margin-bottom: 20px;
+  background-color: #d9d9dd;
+}
+
+.tittle {
+  color: #884299;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 50px;
+  font-family: "Pokemon Solid", sans-serif;
+}

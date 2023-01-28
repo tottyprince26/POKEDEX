@@ -1,0 +1,10 @@
+.mat-toolbar{
+    height: 80px;
+}
+.toolbar-row{
+    height: 80px;
+    background-color: #884299 ;
+}
+img:hover{
+    cursor: pointer;
+}

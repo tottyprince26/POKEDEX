@@ -1,0 +1,57 @@
+<h1 >POKÉDEX</h1>
+<mat-form-field class="filter">
+    <mat-label>filtro</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="name or No." #input>
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="datasource">
+  
+     
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef  style="color: white; background-color:#726b8f; font-size: 20px;"> No. </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 30px; color:#424242" > {{element.position}} </td>
+      </ng-container>
+  
+      
+       <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef style="color: white; background-color:#726b8f; font-size: 20px;"> NOMBRE </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 30px; font-family:'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color:#424242"> {{element.name}} </td>
+      </ng-container>
+
+      
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef  style="color: white; background-color:#726b8f; font-size: 20px;"> IMAGEN </th>
+        <td mat-cell *matCellDef="let row">
+            <img style=" width: 30%; height: 300px;" src="{{row.image}}" alt="image" >    
+        </td>
+      </ng-container>
+    
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row class="mat-row" *matRowDef="let row; columns: displayedColumns;" (click)="getRow(row)"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+    </table>
+  
+</div>
+
+<!--<div class="grid-container">
+  <div class="card">
+    <img src="{{pokemonImg}}" alt="Pokemon">
+    <div class="stats">
+      <p>Nombre: {{pokemonName}}</p>
+      <p>Peso: {{pokemonWeight}}</p>
+      <p>Altura: {{pokemonHeight}}</p>
+    </div>
+  </div>
+</div>
+-->
+
+    <mat-paginator style="margin-bottom: 10px;"[length]="totalPokemons" [pageSize]="pokemonsPerPage" [pageSizeOptions]="[5, 10, 25]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+ 
